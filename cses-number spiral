@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main(void) {
+	
+	int t;
+	cin >> t;
+	while(t--) {
+	
+	unsigned long long int n, m;
+	cin >> n >> m;
+	//long long int c= n*m; 
+	//n = 1000000000;
+	//m = n;
+	
+	
+	if(n == 1 && m==1) {cout << "1" <<endl; continue;}
+	
+	unsigned long long int max = (n > m ) ? n : m;
+	unsigned long long int min = (n < m ) ? n : m;
+	
+	unsigned long long int size = (2*max)-1;
+	
+	//unsigned long long int arr[size];
+	unsigned long long int num = max*max; 
+	
+	
+	
+	
+	if(max%2==0) {
+		
+		if(n < m) {
+				cout << (num)-(max+(max-min)-1) <<endl;
+		}else {
+			cout << (num)-(m-1) <<endl;
+		}
+	}else {
+		 
+		if(n < m) {
+				cout << ((num-size))+(max+(max-min)) <<endl;
+		}else{
+		cout << ((num-size))+(m) <<endl;
+		}
+	}
+
+
+
+	/*if(n < m) {
+	cout << arr[max + (max-min)] <<endl;	
+	}else {
+	cout << arr[m] <<endl;
+	}*/
+ }
+
+
+	return 0;
+	
+}
